@@ -7,6 +7,8 @@ const PaymentController=require('../controller/payment.js')
 const SendMessageController=require('../controller/chat.js')
 const CreateCourseController=require('../controller/course.js')
 
+const OnlineLiveController=require('../controller/OnlineLive.js')
+
 Router.get('/bc',(req,res)=>{
     res.send({status:true, msg: "Successfully"})
 })
@@ -22,6 +24,10 @@ Router.post('/sendMessage', SendMessageController.sendMessage)
 
 Router.post('/create', CreateCourseController.create)
 
+
+Router.get('/getAllOnline', OnlineLiveController.getAllOnlineData)
+Router.post('/createOnline',OnlineLiveController.create )
+Router.post('/deleteOnline',OnlineLiveController.deleteByCode )
 
 
 module.exports = Router

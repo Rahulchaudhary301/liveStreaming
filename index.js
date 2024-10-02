@@ -82,6 +82,24 @@ io.on('connection', (socket) => {
 	})
 
 
+  socket.on('deleteDbLive',()=>{
+
+    console.log('hhhhhhhh')
+		
+    socket.broadcast.emit('updatDbLive')
+	})
+
+
+
+  socket.on('StartLive',(data)=>{
+		
+    socket.broadcast.emit('countLive',data)
+    console.log(data)
+	})
+
+
+
+
 
   
 
